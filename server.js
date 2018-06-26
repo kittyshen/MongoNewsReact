@@ -3,6 +3,8 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 // const routes = require("./routes");
 const app = express();
+var request = require("request");
+
 var cheerio = require("cheerio");
 var db = require("./models");  // this is for the routes directly in server.js file
 
@@ -40,7 +42,7 @@ app.get("/save", function(req, res) {
   .populate("notes")
   .then(function(dbArticle) {
     // res.json(dbArticle);
-    res.render("save",{article:dbArticle});
+    // res.render("save",{article:dbArticle});
   })
 });
 

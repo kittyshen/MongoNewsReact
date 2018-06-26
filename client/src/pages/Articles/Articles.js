@@ -67,7 +67,7 @@ class Articles extends Component {
         <Row>
           <Col size="md-12">
             <Jumbotron >
-              <ScrapeBtn onClick={this.scrapeArticles}/>
+              <ScrapeBtn onClick={() => this.scrapeArticles()}/>
             </Jumbotron>
           </Col>
           <Col size="sm-12">

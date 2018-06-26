@@ -3,10 +3,13 @@ import Modal from 'react-responsive-modal';
 import Note from "../Note";
 
 class ModalContainer extends React.Component {
-  state = {
-    open: false,
+  constructor(props){
+    super(props);
+    this.state = {
+      open: false,
+    }
   };
- 
+  
   onOpenModal = () => {
     this.setState({ open: true });
   };
@@ -22,18 +25,15 @@ class ModalContainer extends React.Component {
         <Note onClick={this.onOpenModal}/>
         <Modal open={open} onClose={this.onCloseModal} center>
           <div className="modal-body">
-                  
             <form id="Form">
               <div className="form-group">
-                {/* <div id="note"></div> */}
                 <label className="label-control">Notes </label> 
                 <input placeholder="your name" type="textarea" className="form-control" id="Notes"/>
-                <textarea placeholder="your notes" type="textarea" cols="30" rows="10" className="form-control" id="newNote"> </textarea>
+                <textarea placeholder="your notes" type="textarea" cols="50" rows="8" className="form-control" id="newNote" /> 
               </div>
             </form>
             <div id="oldNotes">Older Notes</div>
-            <button type="submit" id="addnote_btn" className="btn btn-success btn-outline-success submit">Submit</button>
-
+            <button onClick={this.props.saveNote} type="submit" id="addnote_btn" className="btn btn-success btn-outline-success submit">Submit</button>
           </div>
         </Modal>
       </div>

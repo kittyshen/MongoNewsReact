@@ -1,7 +1,6 @@
 import React from "react";
 import Articles from "./pages/Articles";
 import Save from "./pages/Save";
-import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import { BrowserRouter as Router, Route , Switch} from "react-router-dom";

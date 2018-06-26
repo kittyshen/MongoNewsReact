@@ -67,6 +67,10 @@ class Save extends Component {
     }
   };
 
+  saveNote = () => {
+    console.log('hi')
+  }
+
   render() {
     return (
       <Container fluid>
@@ -90,7 +94,8 @@ class Save extends Component {
                     <span>{article.summary}</span>
                     <a href= {article.link}>  {article.link} </a>
                     <br/>
-                    <ModalContainer />
+                    <ModalContainer saveNote={this.saveNote} />
+
 
                   </ListItem>
                 ))}

@@ -1,0 +1,41 @@
+
+
+a{
+  color:rgb(223, 134, 79);
+}
+a{
+  /* color:white; */
+  text-decoration: none;
+}
+ul{
+  padding:0;
+}
+li{
+  list-style-type:none;
+  padding:0;
+}
+li >p {
+  margin:0;
+}
+.navbar-light{
+  background-color: black;
+  padding-top:0;
+  padding-bottom: 0;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12)
+}
+.alert-dark{
+  border-color:rgba(0, 0, 0, 0);
+
+}
+
+h5{
+  color:  rgb(240, 182, 111);
+  background-color: #6a574c;
+}
+.saveBtn{
+  background-color: rgb(205, 126, 31);
+  padding:0 0.4em;
+  border:0;
+  margin-top: 0.5em;
+  font-size: 1em;
+}

@@ -1,5 +1,6 @@
 import React from "react";
-import Books from "./pages/Books";
+import Articles from "./pages/Articles";
+import Save from "./pages/Save";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
@@ -15,9 +16,10 @@ const App = () => (
     <div>
       <Nav />
       <Switch>
-        <Route exact path="/" component={Books} />
-        <Route exact path="/books" component={Books} />
-        <Route exact path="/books/:id" component={Detail} />
+        <Route exact path="/" component={Articles} />
+        <Route exact path="/save" component={Save} />
+        {/* <Route exact path="/books/:id" component={Detail} /> */}
+        <Route exact path="/scrape" component={Articles} />
         <Route component={NoMatch} />
       </Switch>
     </div>

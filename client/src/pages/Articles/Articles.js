@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import DeleteBtn from "../../components/DeleteBtn";
+// import DeleteBtn from "../../components/DeleteBtn";
 import ScrapeBtn from "../../components/ScrapeBtn";
+import SaveBtn from "../../components/SaveBtn";
 import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
@@ -32,9 +33,10 @@ class Articles extends Component {
   };
 
   scrapeArticles = () =>{
-    API.getArticles()
+    API.scrapeArticles()
       .then(res =>
-        this.setState({ articles: res.data})
+        this.loadArticles()
+        // this.setState({ articles: res.data})
       )
       .catch(err => console.log(err));
   }
@@ -74,14 +76,18 @@ class Articles extends Component {
               <List>
                 {this.state.articles.map(article => (
                   <ListItem key={article._id}>
-                    <Link to={"/articles/" + article._id}>
-                      <strong>
+                      <h4>
                         {article.title}  
-                      </strong>
-                      <span>{article.summary}</span>
-                    </Link>
+                        <SaveBtn onClick={() => this.saveArticle(article._id)} />
 
-                    <DeleteBtn onClick={() => this.deletearticle(article._id)} />
+                      </h4>
+
+                      <span>{article.summary}</span>
+                    <a href= {article.link}>  {article.link} </a>
+                    {/* <Link to={"/articles/" + article._id}>
+
+                    </Link> */}
+
                   </ListItem>
                 ))}
               </List>

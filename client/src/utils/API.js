@@ -5,6 +5,9 @@ export default {
   getArticles: function() {
     return axios.get("/articles");
   },
+  scrapeArticles:function(){
+    return axios.get("/scrape");
+  },
   // Gets the article with the given id
   getArticle: function(id) {
     return axios.get("/articles/" + id);

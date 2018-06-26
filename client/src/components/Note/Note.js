@@ -5,7 +5,7 @@ import "./Note.css";
 // That way we don't have to define them all individually
 const Note = props => (
   <span className="btn btn-info" {...props}>
-   Note
+   Leave Note
   </span>
 
 );

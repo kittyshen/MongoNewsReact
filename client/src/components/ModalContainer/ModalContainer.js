@@ -1,6 +1,8 @@
 import React from 'react';
 import Modal from 'react-responsive-modal';
 import Note from "../Note";
+import API from "../../utils/API";
+
 
 class ModalContainer extends React.Component {
   constructor(props){

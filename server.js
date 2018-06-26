@@ -35,6 +35,13 @@ app.get("/",function(req,res){
       res.sendFile(path.join(__dirname, "../client/build/index.html"));
   })
 })
+app.get("/",function(req,res){
+  db.Article.find({}).sort({_id:-1})
+  .then(function(dbArticle){
+    // res.json(dbArticle);
+      res.sendFile(path.join(__dirname, "../client/build/index.html"));
+  })
+})
 
 app.get("/saved", function(req, res) {
   // TODO: Finish the route so it grabs all of the articles
@@ -106,9 +113,6 @@ app.get("/articles", function(req, res) {
     res.json(dbArticle);
   })
 });
-
-
-
 
 // Route for grabbing a specific Article by id, populate it with it's note
 app.put("/saveArticle/:id", function(req, res) {

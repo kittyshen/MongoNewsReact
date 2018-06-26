@@ -39,6 +39,11 @@ h5{
   margin-top: 0.5em;
   font-size: 1em;
 }
+/* 
+.modal{
+  display: block !important; // I added this to see the modal, you don't need this 
+} 
+*/
 
 .modal-dialog{
   overflow-y: initial !important

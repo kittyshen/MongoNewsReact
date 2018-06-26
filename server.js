@@ -36,12 +36,12 @@ app.get("/",function(req,res){
   })
 })
 
-app.get("/save", function(req, res) {
+app.get("/saved", function(req, res) {
   // TODO: Finish the route so it grabs all of the articles
   db.Article.find({saved:true}).sort({_id:-1})  
   .populate("notes")
   .then(function(dbArticle) {
-    // res.json(dbArticle);
+    res.json(dbArticle);
     // res.render("save",{article:dbArticle});
   })
 });
@@ -109,6 +109,7 @@ app.get("/articles", function(req, res) {
 
 
 
+
 // Route for grabbing a specific Article by id, populate it with it's note
 app.put("/saveArticle/:id", function(req, res) {
 
@@ -122,9 +123,9 @@ app.put("/saveArticle/:id", function(req, res) {
 
 //deleting from saved
 app.put("/removeArticle/:id", function(req, res) {
-  var newVal = req.body.saved ; // testing grab value out of updating method through req.body
+  // var newVal = req.body.saved ; // testing grab value out of updating method through req.body
   var id = req.params.id;
-  db.Article.findOneAndUpdate( {_id:id},{$set:{saved:newVal}})   //  db.Article.findOne(_id: id)
+  db.Article.findOneAndUpdate( {_id:id},{$set:{saved:false}})   //  db.Article.findOne(_id: id)
   .populate("notes")
   .then(function(dbArticle) {
     res.json(dbArticle);

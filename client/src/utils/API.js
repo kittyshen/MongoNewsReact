@@ -12,12 +12,20 @@ export default {
   getArticle: function(id) {
     return axios.get("/articles/" + id);
   },
+  getArticlesSaved:function(){
+    return axios.get("/saved");
+  },
   // Deletes the article with the given id
   deleteArticle: function(id) {
-    return axios.delete("/articles/" + id);
+    return axios.put("/removeArticle/" + id);
   },
   // Saves a article to the database
   saveArticle: function(id) {
-    return axios.post("/articles"+id);
+    return axios.put("/saveArticle/"+id);
+  },
+
+  saveNote: function(id) {
+    return axios.put("/saveArticle/"+id);
   }
+
 };

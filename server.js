@@ -1,9 +1,10 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-// const routes = require("./routes");
+const routes = require("./routes");
 const app = express();
 const path = require("path");
+const router = require("express").Router();
 
 var request = require("request");
 
@@ -163,9 +164,10 @@ app.post("/articles/:id", function (req, res) {
 
 });
 
-app.get(function (req, res) {
+router.use(function(req, res) {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
+
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines",

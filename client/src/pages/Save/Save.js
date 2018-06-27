@@ -71,8 +71,6 @@ class Save extends Component {
                     <a href= {article.link}>  {article.link} </a>
                     <br/>
                     <ModalContainer id={article._id} />
-
-
                   </ListItem>
                 ))}
               </List>

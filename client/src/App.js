@@ -7,18 +7,12 @@ import { BrowserRouter as Router, Route , Switch} from "react-router-dom";
 
 
 const App = () => (
-  // <div>
-  //   <Nav />
-  //   <Books />
-  // </div>
   <Router>
     <div>
       <Nav />
       <Switch>
         <Route exact path="/" component={Articles} />
         <Route exact path="/saved" component={Save} />
-        {/* <Route exact path="/books/:id" component={Detail} /> */}
-        {/* <Route exact path="/scrape" component={Articles} /> */}
         <Route component={NoMatch} />
       </Switch>
     </div>

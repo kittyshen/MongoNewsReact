@@ -8,9 +8,18 @@ html,body{
   height:100%;
   overflow:auto;
   margin:0;
-  font-family: 'Roboto Condensed', sans-serif;
+  /* font-family: 'Roboto Condensed', sans-serif; */
   font-family: 'Sunflower', sans-serif; 
   /* color: rgb(130, 233, 163); */
+}
+
+/* h4{
+  font-family: 'Sunflower', sans-serif; 
+} */
+
+.nav-link{
+  font-family: 'Sunflower', sans-serif; 
+
 }
 
 a{
@@ -32,13 +41,13 @@ h5{
   color:  rgb(240, 182, 111);
   background-color: #6a574c;
 }
-.saveBtn{
+/* .saveBtn{
   background-color: rgb(205, 126, 31);
   padding:0 0.4em;
   border:0;
   margin-top: 0.5em;
   font-size: 1em;
-}
+} */
 
 .modal-dialog{
   overflow-y: initial !important

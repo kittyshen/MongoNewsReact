@@ -33,41 +33,19 @@ class Save extends Component {
     .catch(err => console.log(err));
   };
 
-  popNote = () =>{
 
-  };
+  // saveNote = (id) =>{
+  //   API.saveNote(id)
+  //   .then(res =>
+  //     this.loadArticles()
+  //   )
+  //   .catch(err => console.log(err));
+  // };
 
-  saveNote = (id) =>{
-    API.saveNote(id)
-    .then(res =>
-      this.loadArticles()
-    )
-    .catch(err => console.log(err));
-  };
 
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
-
-  handleFormSubmit = event => {
-    event.preventDefault();
-    if (this.state.title && this.state.author) {
-      API.saveBook({
-        title: this.state.title,
-        author: this.state.author,
-        synopsis: this.state.synopsis
-      })
-        .then(res => this.loadArticles())
-        .catch(err => console.log(err));
-    }
-  };
-
-  saveNote = () => {
-    console.log('hi')
-  }
+  // saveNote = () => {
+  //   console.log('hi')
+  // }
 
   render() {
     return (
@@ -92,7 +70,7 @@ class Save extends Component {
                     <span>{article.summary}</span>
                     <a href= {article.link}>  {article.link} </a>
                     <br/>
-                    <ModalContainer saveNote={this.saveNote} />
+                    <ModalContainer id={article._id} />
 
 
                   </ListItem>

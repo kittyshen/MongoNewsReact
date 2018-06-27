@@ -24,8 +24,22 @@ export default {
     return axios.put("/saveArticle/"+id);
   },
 
-  saveNote: function(id) {
-    return axios.put("/saveArticle/"+id);
+  // saveNote: function(obj,id) {
+  //   return axios.post("/saveArticle/"+id,obj);
+  // }
+  saveNote: function(obj,id) {
+    return axios({
+      method: 'post',
+      url: "/articles/"+id,
+      data: obj
+    }).then(function (response) {
+      //handle success
+      console.log(response);
+    }).catch(function (response) {
+      //handle error
+      console.log(response);
+    });
   }
 
+  
 };

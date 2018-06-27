@@ -16,7 +16,7 @@ const App = () => (
       <Nav />
       <Switch>
         <Route exact path="/" component={Articles} />
-        <Route exact path="/save/all" component={Save} />
+        <Route exact path="/saved" component={Save} />
         {/* <Route exact path="/books/:id" component={Detail} /> */}
         {/* <Route exact path="/scrape" component={Articles} /> */}
         <Route component={NoMatch} />

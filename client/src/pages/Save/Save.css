@@ -1,8 +1,8 @@
 
 html,body{
   font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
-  line-height: 1.2;
-  background-image:url("https://www.thewrap.com/wp-content/uploads/2015/12/New-York-Times-paper.jpg");
+  line-height: 1.6;
+  /* background-image:url("https://www.thewrap.com/wp-content/uploads/2015/12/New-York-Times-paper.jpg"); */
   background-size: cover;
   background-color: rgb(244, 233, 214);
   height:100%;

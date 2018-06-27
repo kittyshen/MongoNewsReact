@@ -4,7 +4,6 @@ import ScrapeBtn from "../../components/ScrapeBtn";
 import SaveBtn from "../../components/SaveBtn";
 import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
-import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import "./Articles.css"
@@ -34,10 +33,12 @@ class Articles extends Component {
 
   scrapeArticles = () =>{
     API.scrapeArticles()
-      .then(res =>
-        this.loadArticles()
-        // this.setState({ articles: res.data})
-      )
+      .then(res =>{
+        alert("scrape complete! ");
+
+        // swal("Good job!", "scrape complete! ", "success");
+        this.loadArticles();
+      })
       .catch(err => console.log(err));
   }
 

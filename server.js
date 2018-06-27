@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3001;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.use(express.static("public"));
+// app.use(express.static("public"));
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
@@ -31,15 +31,8 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines"
 app.get("/",function(req,res){
   db.Article.find({}).sort({_id:-1})
   .then(function(dbArticle){
-    // res.json(dbArticle);
-      res.sendFile(path.join(__dirname, "../client/build/index.html"));
-  })
-})
-app.get("/",function(req,res){
-  db.Article.find({}).sort({_id:-1})
-  .then(function(dbArticle){
-    // res.json(dbArticle);
-      res.sendFile(path.join(__dirname, "../client/build/index.html"));
+    res.json(dbArticle);
+      // res.sendFile(path.join(__dirname, "../client/build/index.html"));
   })
 })
 

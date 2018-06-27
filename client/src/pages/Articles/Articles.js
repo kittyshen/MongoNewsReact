@@ -7,6 +7,7 @@ import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import "./Articles.css"
+import swal from "sweetalert"
 
 class Articles extends Component {
   state = {
@@ -36,7 +37,7 @@ class Articles extends Component {
       .then(res =>{
         alert("scrape complete! ");
 
-        // swal("Good job!", "scrape complete! ", "success");
+        swal("Good job!", "scrape complete! ", "success");
         this.loadArticles();
       })
       .catch(err => console.log(err));

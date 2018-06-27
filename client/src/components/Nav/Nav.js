@@ -15,7 +15,7 @@ const Nav = () => (
         </a>
       </li>
       <li className="nav-item active">
-        <a className="nav-link" href="/save">
+        <a className="nav-link" href="/save/load">
           Saved Articles
         </a>
       </li>

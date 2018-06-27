@@ -35,7 +35,7 @@ class Articles extends Component {
   scrapeArticles = () =>{
     API.scrapeArticles()
       .then(res =>{
-        alert("scrape complete! ");
+        // alert("scrape complete! ");
 
         swal("Good job!", "scrape complete! ", "success");
         this.loadArticles();

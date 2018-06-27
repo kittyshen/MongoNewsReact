@@ -3,6 +3,8 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 // const routes = require("./routes");
 const app = express();
+const path = require("path");
+
 var request = require("request");
 
 var cheerio = require("cheerio");
@@ -27,7 +29,13 @@ if (process.env.NODE_ENV === "production") {
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines");
 
 
+
 // routes and controller directly in server.js
+app.get(function(req, res) {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
+
+
 app.get("/",function(req,res){
   db.Article.find({}).sort({_id:-1})
   .then(function(dbArticle){

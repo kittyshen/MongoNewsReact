@@ -18,10 +18,10 @@ const Nav = () => (
         </a>
       </li>
       <li className="nav-item active">
-        <Link to="/save">Saved Articles </Link>
+        <Link to="/saved">Saved Articles </Link>
 
         <a className="nav-link" href="/save">
-          Saved Articles
+          Saved Articles (same route using 'a' tag will only retrieve serverside data)
         </a>
       </li>
     </ul>

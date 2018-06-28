@@ -1,10 +1,10 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const routes = require("./routes");
+// const routes = require("./routes");
 const app = express();
-const path = require("path");
-const router = require("express").Router();
+// const path = require("path");
+// const router = require("express").Router();
 
 var request = require("request");
 
@@ -27,8 +27,6 @@ if (process.env.NODE_ENV === "production") {
 // app.use(routes);
 
 // routes and controller directly in server.js
-
-
 
 app.get("/", function (req, res) {
   db.Article.find({}).sort({ _id: -1 })
@@ -164,9 +162,9 @@ app.post("/articles/:id", function (req, res) {
 
 });
 
-router.use(function(req, res) {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
-});
+// router.use(function(req, res) {
+//   res.sendFile(path.join(__dirname, "../client/build/index.html"));
+// });
 
 
 // Connect to the Mongo DB

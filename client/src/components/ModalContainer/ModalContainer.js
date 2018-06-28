@@ -81,7 +81,7 @@ class ModalContainer extends React.Component {
             <div id="oldNotes">Older Notes</div>
             <div>
               {this.state.notes.map(note => (
-                <li>
+                <li key={note._id}>
                   <h6>{`${note.title} says:` }</h6>
                   <span>{note.body}</span>
                 </li>
